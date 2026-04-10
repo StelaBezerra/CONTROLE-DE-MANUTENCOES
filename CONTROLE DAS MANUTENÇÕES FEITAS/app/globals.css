@@ -1,0 +1,610 @@
+:root {
+  --bg: #10161d;
+  --bg-soft: #151d25;
+  --bg-elevated: #1b2631;
+  --card: #17212b;
+  --card-strong: #1d2a36;
+  --line: #2c3b49;
+  --text: #ecf1f5;
+  --muted: #9aa7b2;
+  --accent: #b58a57;
+  --accent-strong: #c79b66;
+  --accent-soft: rgba(181, 138, 87, 0.16);
+  --danger: #d97c7c;
+  --blue: #4a8cff;
+  --blue-soft: rgba(74, 140, 255, 0.16);
+  --yellow: #e4b64c;
+  --yellow-soft: rgba(228, 182, 76, 0.16);
+  --green: #3fbf7f;
+  --green-soft: rgba(63, 191, 127, 0.16);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --radius: 18px;
+}
+
+::selection {
+  background: rgba(181, 138, 87, 0.25);
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #0d1319 0%, #121a22 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #9aa7b2 !important;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #121a22;
+  color: var(--text);
+  padding: 12px 14px;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #b58a57 !important;
+  box-shadow: 0 0 0 2px rgba(181, 138, 87, 0.2) !important;
+}
+
+input[type="checkbox"] {
+  accent-color: #b58a57 !important;
+}
+
+code,
+pre {
+  font-family: Consolas, Monaco, monospace;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.sidebar {
+  background: rgba(14, 20, 27, 0.96);
+  border-right: 1px solid rgba(44, 59, 73, 0.85);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar.collapsed {
+  width: 88px;
+  padding: 18px 12px;
+}
+
+.sidebarTop {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.sidebarTop h1 {
+  margin: 4px 0 8px;
+  font-size: 2.1rem;
+}
+
+.sidebarTop p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.iconButton {
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.sidebarActions,
+.inlineStoreManager,
+.storeListModal,
+.fileList,
+.ticketsGrid,
+.timelineList {
+  display: grid;
+  gap: 10px;
+}
+
+.blockButton {
+  width: 100%;
+}
+
+.primaryButton,
+.secondaryButton,
+.ghostDanger,
+.uploadButton,
+.fileLink {
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: var(--accent);
+  color: #18120d;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.primaryButton:hover {
+  background: var(--accent-strong);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--text);
+}
+
+.ghostDanger {
+  background: transparent;
+  color: var(--danger);
+}
+
+.uploadButton {
+  background: var(--card-strong);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.uploadButton input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fileLink {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-color: rgba(181, 138, 87, 0.24);
+}
+
+.inlineStoreManager,
+.panelCard,
+.statCard,
+.ticketCard,
+.modalCard,
+.setupCard {
+  background: rgba(23, 33, 43, 0.92);
+  border: 1px solid rgba(44, 59, 73, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.inlineStoreManager {
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.cardHeaderCompact,
+.sectionHeader,
+.filesHeader,
+.ticketHeader,
+.modalHeader,
+.timelineHeader,
+.timelineStepTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.cardHeaderCompact h2,
+.sectionHeader h3,
+.modalHeader h3,
+.ticketHeader h4 {
+  margin: 0;
+}
+
+.content {
+  padding: 26px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  margin: 6px 0 8px;
+  font-size: 2.1rem;
+}
+
+.hero p,
+.sectionHeader p,
+.mutedLine,
+.emptyFiles,
+.fileItem p,
+.setupCard p {
+  color: var(--muted);
+}
+
+.errorBanner {
+  margin-bottom: 18px;
+  background: rgba(217, 124, 124, 0.14);
+  border: 1px solid rgba(217, 124, 124, 0.28);
+  color: #f0b2b2;
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.statCard span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.statCard strong {
+  font-size: 2.3rem;
+}
+
+.statNeutral strong {
+  color: var(--text);
+}
+
+.statBlue {
+  border-color: rgba(74, 140, 255, 0.24);
+  background: linear-gradient(180deg, rgba(74, 140, 255, 0.08), rgba(23, 33, 43, 0.92));
+}
+
+.statBlue strong {
+  color: var(--blue);
+}
+
+.statYellow {
+  border-color: rgba(228, 182, 76, 0.24);
+  background: linear-gradient(180deg, rgba(228, 182, 76, 0.08), rgba(23, 33, 43, 0.92));
+}
+
+.statYellow strong {
+  color: var(--yellow);
+}
+
+.statGreen {
+  border-color: rgba(63, 191, 127, 0.24);
+  background: linear-gradient(180deg, rgba(63, 191, 127, 0.08), rgba(23, 33, 43, 0.92));
+}
+
+.statGreen strong {
+  color: var(--green);
+}
+
+.panelCard {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.filters {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 220px 260px 1fr;
+  margin: 18px 0 20px;
+}
+
+.emptyState {
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.ticketCard {
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.ticketCode {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ticketHeaderSide {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.statusBadge,
+.statusMini {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.statusBlue {
+  color: var(--blue);
+  background: var(--blue-soft);
+  border-color: rgba(74, 140, 255, 0.25);
+}
+
+.statusYellow {
+  color: var(--yellow);
+  background: var(--yellow-soft);
+  border-color: rgba(228, 182, 76, 0.25);
+}
+
+.statusGreen {
+  color: var(--green);
+  background: var(--green-soft);
+  border-color: rgba(63, 191, 127, 0.25);
+}
+
+.ticketInfo {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.ticketInfo p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.timelineBox,
+.filesBox {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.timelineTitle {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.timelineList {
+  margin-top: 14px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.timelineRail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timelineDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #111922;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.timelineDot.done {
+  background: var(--green);
+  color: #08140d;
+  border-color: transparent;
+}
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  min-height: 28px;
+  background: var(--line);
+  margin-top: 8px;
+}
+
+.timelineLine.done {
+  background: rgba(63, 191, 127, 0.56);
+}
+
+.timelineContent {
+  border: 1px solid rgba(44, 59, 73, 0.8);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.timelineItem.done .timelineContent {
+  border-color: rgba(63, 191, 127, 0.24);
+  background: rgba(63, 191, 127, 0.06);
+}
+
+.timelineCheckLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted) !important;
+}
+
+.timelineCheckLabel input {
+  width: 16px;
+  height: 16px;
+}
+
+.fileItem,
+.storeItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.fileItem p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+}
+
+.fileActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.setupScreen,
+.loadingScreen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.setupCard {
+  width: min(720px, 100%);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.setupCard h1 {
+  margin: 8px 0 12px;
+}
+
+.setupCard pre {
+  background: #10161d;
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 14px;
+  color: #d8e0e8;
+  overflow: auto;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 14, 0.72);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.modalCard {
+  width: min(920px, 100%);
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.formGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.modalActions,
+.inlineForm {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .statsGrid,
+  .filters,
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .ticketHeader,
+  .fileItem,
+  .storeItem,
+  .modalActions,
+  .inlineForm,
+  .timelineStepTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ticketHeaderSide {
+    justify-items: stretch;
+  }
+}
